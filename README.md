@@ -8,11 +8,11 @@
 由于科研部的粗心大意把app源码搞丢了，所以科研部打算将继续维护这套程序直至有完整的web界面
 
 ## 截图
-![主页面](https://s2.loli.net/2022/01/23/lDkmFu8Ow2ALXaY.png)
+![主页面](https://s2.loli.net/2022/01/23/lDkmFu8Ow2ALXaY.png)  
 主页面
 
-![聊天室页面](https://s2.loli.net/2022/01/23/jLTbYqaRWDiCBrv.png)
+![聊天室页面](https://s2.loli.net/2022/01/23/jLTbYqaRWDiCBrv.png)  
 聊天室页面
 
 ## 更新
-2022/1/23 增加了聊天室列表和新建聊天室功能
+2022/1/23 增加了聊天室列表和新建聊天室功能  

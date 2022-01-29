@@ -11,10 +11,11 @@
 	//设置时间
 	$time=time();
 	//得到用户名
-	$username=trim($_POST['username']);
+	$username=htmlspecialchars(trim($_POST['username']));
 	//得到内容
-	$content=trim($_POST['content']);
- 
+	$content=htmlspecialchars(trim($_POST['content']));
+	//htmlspecialchars() 函数阻止XSS跨站脚本攻击
+
 	//组合写入的字符串：内容和用户之间分开，使用$#行与行之间分开，使用&^
 	$string=$username.'$#'.$content.'$#'.$time.'&^';
 	//写入文件

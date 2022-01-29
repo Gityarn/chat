@@ -12,9 +12,10 @@
 
 //处理post请求
 if($_POST){
-    $operation=trim($_POST["operation"]);//获取操作类型 ls聊天室列表 new创建聊天室 del删除聊天室
-	$name=trim($_POST["name"]);//获取待创建的聊天室名称name
+    $operation=htmlspecialchars(trim($_POST["operation"]));//获取操作类型 ls聊天室列表 new创建聊天室 del删除聊天室
+	$name=htmlspecialchars(trim($_POST["name"]));//获取待创建的聊天室名称name
 	//echo $_POST["operation"];
+	//htmlspecialchars() 函数阻止XSS跨站脚本攻击
 if ($operation=="ls") {
 
  }
@@ -33,6 +34,17 @@ if ($operation=="ls") {
          echo "<font color=\"#FF0000\">创建聊天室失败：该名称已存在！</font>";
      }
      
+ }
+ elseif ($operation=="del" and $name!=null)
+ {
+     if(is_dir($name)){
+         unlink("./$name/index.php");
+         unlink("./$name/write.php");
+         unlink("./$name/message.txt");
+         rmdir($name);
+     }else{
+         echo "<font color=\"#FF0000\">删除聊天室失败：没有该聊天室！</font>";
+     }
  }
      //print_r($dir);
 
